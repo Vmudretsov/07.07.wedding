@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Свадьба</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Advent+Pro:wght@500&display=swap" rel="stylesheet">
+
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+
+html,body{
+  overflow-x:hidden;
+  font-family:'Inter',sans-serif;
+  font-family: 'Advent Pro', sans-serif;
+  background-color: #E5E5E5;
+  font-size: 16px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+
+.heart{
+   background-image: url('small-heart.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 36px;
+   height: 34px;
+   position: absolute;
+   top: 17%;
+}
+
+.heart h1{
+  /* font-size: 50px; */
+}
+
+.hearttw{
+   background-image: url('small-heart.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 36px;
+   height: 34px;  
+   margin-top: 50px;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:url('./photo.jpg') center 80%/cover no-repeat;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  /* background:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.0)); */
+}
+
+.hero-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+  animation:fadeIn 2s ease;
+}
+
+h1{
+  /* font-family:'Great Vibes'; */
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-size:100px;
+  letter-spacing: 9%;
+  /* padding-left: 7px; */
+}
+
+.hero-title{
+  width: 100%;
+  padding-right: 20px;
+  margin-bottom: 95px;
+  line-height: 0.8;
+}
+
+.hero-title div{
+  text-align: right;
+}
+
+.date{
+  font-family: 'Alex Brush', cursive;
+  font-size: 30px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* waves */
+/* .water{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:120px;
+}
+
+.wave{
+  position:absolute;
+  width:200%;
+  height:100%;
+  background:url('https://svgshare.com/i/13pG.svg') repeat-x;
+  animation:waveMove linear infinite;
+}
+
+.wave1{animation-duration:12s; opacity:0.5;}
+.wave2{animation-duration:18s; opacity:0.3;}
+.wave3{animation-duration:25s; opacity:0.2;}
+
+@keyframes waveMove{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+} */
+
+
+/* bubbles */
+canvas{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+/* sections */
+.section{
+  padding:40px 0;
+  display:flex;
+  justify-content:center;
+  animation:fadeIn 1s ease;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1.5s;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.invite-bg{
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80') center/cover;
+  position:relative;
+}
+
+.invite-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.55);
+}
+
+.invite-bg > *{
+  position:relative;
+}
+
+
+
+
+.card, .timeline, .dress-card{
+  /* max-width:700px;
+  width:100%;
+  border-radius:20px;
+  padding:40px;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.05); */
+  text-align:center;
+}
+
+.title{
+  /* font-family:'Playfair Display'; */
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+/* about */
+.people{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.person img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.name{
+  margin-top:10px;
+  /* font-family:'Great Vibes'; */
+  font-size:22px;
+}
+
+.dress-title{
+  color: #fff;
+  font-weight: 400;
+  font-size:32px;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 6%;
+  margin-bottom: 40px;
+}
+
+.dress-wrap{
+  display: inline-flex;
+  width: 90%;
+  margin-bottom: 30px;
+  border-radius: 60%;
+}
+
+.dress-colors{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1x solid rgba(179, 179, 179, 0.6);
+}
+
+.dress-colors img{
+   display: block;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 100%;
+}
+
+.convert{
+  padding-top: 30px;
+}
+
+.convert-text{
+  padding: 0 5px;
+  color: #fff;
+  font-weight: 400;
+  font-size:25px;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 9%;
+  margin-bottom: 40px;
+}
+
+.convert-img{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.convert-img img{
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 100%;
+}
+
+/* .convert-img{
+   background-image: url('shell.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 160px;
+   height: 100px;
+} */
+
+
+.ceremony{
+  padding: 20px 0;
+}
+.ceremony-wrap{
+  position: relative;
+  padding: 1px 0;
+}
+
+.ceremony-wrap::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(./strokes.png) center / cover no-repeat;
+  z-index: -1;
+}
+
+.ceremony-text{
+  color: #fff;
+  font-weight: 400;
+  font-size:27px;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 9%;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.ceremony-time{
+  font-size: 44px;
+  letter-spacing: 6%;
+  -webkit-text-stroke: 0.5px rgba(187, 187, 187, 0.7);
+}
+
+.ceremony-calendar-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.ceremony-calendar{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.ceremony-calendar img{
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 100%;
+}
+
+.address-wrap{
+  position: relative;
+  padding: 1px 0;
+}
+
+.address-wrap::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(./strokes.png) center / cover no-repeat;
+  z-index: 0;
+}
+
+.address-wrap::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(./seahorse.png) center / cover no-repeat;
+  z-index: 1;
+  width: 128px;
+  height: 201px;
+  top: -80px;
+}
+
+.address-text{
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  font-size:30px;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 9%;
+  line-height: 1.35;
+  text-align: center;
+  margin-top: 18px;
+  margin-bottom: 36px;
+}
+
+.address-text div{
+  font-size: 22px;
+}
+
+.castle{
+  padding: 40px 40px 90px 40px;
+}
+
+.castle img{
+  width: 100%;
+}
+
+.meduza{
+  position: relative;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.meduza::before{
+  content: "";
+  position: absolute;
+  background: url(./meduza.png) center / cover no-repeat;
+    z-index: 0;
+    width: 176px;
+    max-width: 500px;
+    min-height: 240px;
+    right: -4px;
+    top: -45px; 
+}
+
+.meduza-text{
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  font-size:25px;
+  line-height: 1.35;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 9%;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.line-heart{
+  padding: 40px 0;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-heart-wrap{
+  width: 75%;
+}
+
+.line-heart img{
+  width: 100%;
+}
+
+.map-wrap{
+  display: block;
+  padding: 40px;
+}
+
+.map-content{
+  color: #fff;
+  font-weight: 400;
+  font-size:25px;
+  line-height: 1.35;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 9%;
+}
+
+.map-text{
+  margin-bottom: 40px;
+}
+
+.timer-title{
+  color: #fff;
+  font-weight: 400;
+  font-size:25px;
+  line-height: 1.35;
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 9%;
+}
+
+
+
+/* timeline */
+.event{
+  display:flex;
+  margin-bottom:30px;
+}
+
+.time{
+  width:80px;
+  color:#777;
+}
+
+.desc{
+  font-style:italic;
+  color:#666;
+}
+
+/* map */
+.map iframe{
+  width: 100%;
+  height: 250px;
+  border: 0;
+  border-radius: 50px;
+}
+
+.map-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  border-radius:30px;
+  background:#6c8ca3;
+  color:white;
+  text-decoration:none;
+  font-size: 20px;
+}
+
+/* buttons */
+.group button{
+  margin:5px;
+  padding:10px 15px;
+  border-radius:20px;
+  border:none;
+  background:#eef1f7;
+}
+
+.group button.active{
+  background:black;
+  color:white;
+}
+
+/* footer */
+footer{
+  padding:40px;
+  text-align:center;
+}
+
+/* mobile */
+@media(max-width:768px){
+  
+  .heart h1{
+    font-family: 'Alex Brush';
+    font-size:86px; 
+  }
+  .heart h1 span{
+    text-align: right;
+  }
+}
+
+/* ===== TIMER ===== */
+
+.timer-section{
+  /* background:linear-gradient(180deg,#eef5fb,#e3edf7); */
+}
+
+.timer-card{
+  text-align:center;
+}
+
+#timer{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+#timer div{
+  background: linear-gradient(180deg, #eef5fb, #e3edf7);
+  padding:20px;
+  border-radius:15px;
+  min-width:80px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+#timer span{
+  font-size:36px;
+  /* font-family:'Playfair Display'; */
+  color:#7ea1b8;
+}
+
+#timer p{
+  font-size:12px;
+  color:#777;
+  margin-top:5px;
+}
+
+/* ===== BACKGROUNDS ===== */
+
+/* мягкий голубой */
+/* .section:nth-child(even){
+  background:linear-gradient(180deg,#f8fbff,#eef5fb);
+} */
+
+/* легкая текстура */
+.section.bg-image{
+  background:url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80') center/cover;
+  position:relative;
+}
+
+.section.bg-image::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.8);
+}
+
+.hero-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+/* cinematic animation */
+
+.hero-content h1,
+.hero-content .date,
+.hero-content div:last-child{
+  opacity:0;
+  transform:translateY(20px) scale(0.95);
+  filter:blur(10px);
+}
+
+.hero-content div:first-child{
+  animation:cinematic 1.5s ease forwards;
+  animation-delay:0.3s;
+}
+
+/* step 1 */
+.hero-content h1{
+  animation:cinematic 1.5s ease forwards;
+  animation-delay:1.9s;
+}
+
+/* step 2 */
+.hero-content .date{
+  animation:cinematic 1.5s ease forwards;
+  animation-delay:2.4s;
+}
+
+/* step 3 */
+.hero-content div:last-child{
+  animation:cinematic 1.5s ease forwards;
+  animation-delay:3.5s;
+}
+
+.hearttw .heart{
+  animation:cinematic 1.5s ease forwards;
+  animation-delay:0.8s;
+}
+
+@keyframes cinematic{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+}
+
+button{
+  position:relative;
+  overflow:hidden;
+}
+
+.priglos-section{
+  display:flex;
+  justify-content:center;
+  padding: 40px 0;
+}
+
+.priglos-content{
+  position:relative;
+  width:100%;
+  max-width:500px; /* ключевой момент */
+  /* aspect-ratio: 16/9; держит форму мазка */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* мазок */
+.priglos-content::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('./strokes.png') center/cover no-repeat;
+  z-index:-1;
+}
+
+/* текст */
+.priglos-content p{
+  width:70%; /* ограничиваем внутри мазка */
+  /* font-family:'Playfair Display'; */
+  -webkit-text-stroke: 0.1px #fff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-size:21px;
+  letter-spacing: 9%;
+  line-height:1.6;
+  font-weight: 500;
+  color:white;
+
+  /* text-shadow:
+    0 2px 8px rgba(0,0,0,0.4),
+    0 0 15px rgba(255,255,255,0.3); */
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<canvas id="bubbles"></canvas>
+
+<div class="hero-content">
+<div class="heart"></div>
+
+<div class="hero-title">
+  <h1> <div>Wedding</div>
+
+  <div>day</div>
+
+  </h1>
+</div>
+
+<div class="date">07.07.2026</div>
+<div class="hearttw"></div>
+</div>
+
+<!-- <div class="water">
+<div class="wave wave1"></div>
+<div class="wave wave2"></div>
+<div class="wave wave3"></div>
+</div> -->
+</section>
+
+<!-- PRIGLOS -->
+<div class="section priglos-section reveal">
+  <div class="priglos-content">
+    <p>
+      Один день в этом году будет для нас особенно важным и поэтому мы
+      приглашаем вас отметить с нами этот праздник!
+    </p>
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+<!-- <div class="section reveal">
+<div class="card">
+<p>
+Там, где живет любовь — рождается радость
+</p>
+
+<div class="people">
+<div class="person">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<div class="name">Жених</div>
+</div>
+<div class="person">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<div class="name">Невеста</div>
+</div>
+</div>
+
+</div>
+</div> -->
+
+<!-- INVITE -->
+<!-- <div class="section invite-bg reveal">
+<div class="card">
+<div class="title">Приглашение</div>
+<p>Мы будем счастливы разделить с вами этот день</p>
+</div>
+</div> -->
+
+<!-- DRESS -->
+<div class="section dress reveal">
+<div class="dress-card">
+<h2 class="dress-title">Dress Code — Cocktail</h2>
+<!-- <p class="dress-text">Просим придерживаться палитры</p> -->
+
+<div class="dress-wrap">
+  <div class="dress-colors">
+    <div><img src="./heart1.png" alt="сердце"></div>
+    <div><img src="./heart2.png" alt="сердце"></div>
+    <div><img src="./heart3.png" alt="сердце"></div>
+    <div><img src="./heart4.png" alt="сердце"></div>
+    <div><img src="./heart5.png" alt="сердце"></div>
+    <div><img src="./heart6.png" alt="сердце"></div>
+  </div>
+</div>
+
+
+<div class="convert">
+  <div class="convert-text">
+    Свои тёплые слова и пожелания приносите в сердцах, а подарки — в конверте.
+  </div>
+  <div class="convert-img">
+    <img src="./shell.png" alt="Ракушка">
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="section ceremony reveal">
+  <div class="ceremony-content">
+
+    <div class="ceremony-wrap">
+      <div class="ceremony-text">
+        Церемония бракосочетания <br>состоится 07 июля 2026 года
+      <br>
+        <div class="ceremony-time">в 14:30</div>
+      </div>
+    </div>
+
+    <div class="ceremony-calendar-wrap">
+      <div class="ceremony-calendar">
+        <img src="./window-calendar.png" alt="Дата Свадьбы">
+      </div>      
+    </div>
+
+  </div>
+</div>
+
+<div class="address-content">
+  <div class="address-wrap">
+
+    <div class="address-text">
+      Место встречи <br> Санкт- Петербург <br>
+      Дворец бракосочетания №1 
+      <div>Английская набережная, 28</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="castle">
+  <div class="castle-img">
+    <img src="./building.jpg" alt="Дворец Бракосочетаний №1">
+  </div>
+</div>
+
+<div class="meduza">
+  <div class="meduza-text">
+    Будем благодарны, если Вы 
+    воздержитесь от криков «Горько» 
+    на празднике, ведь поцелуй — 
+    знак выражения чувств, он не может быть по заказу.
+
+  </div>
+</div>
+
+<div class="line-heart">
+  <div class="line-heart-wrap">
+    <img src="./line-heart.png" alt="Сердечко">
+  </div>
+  
+</div>
+
+<!-- LOCATION -->
+<div class="section reveal map-wrap">
+  <div class="card map-content">
+    <div class="title map-title">Место</div>
+    <p class="map-text">Английская набережная, Санкт-Петербург</p>
+    
+    <div class="map">
+    <iframe src="https://maps.google.com/maps?q=Английская%20набережная%20Санкт-Петербург&z=15&output=embed"></iframe>
+    </div>
+
+    <a class="map-btn" target="_blank"
+    href="https://www.google.com/maps?q=Английская+набережная+Санкт-Петербург">
+    Открыть в Google Maps
+    </a>
+
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<!-- <div class="section reveal">
+<div class="timeline">
+
+<div class="event">
+<div class="time">14:00</div>
+<div>
+<h3>Фуршет</h3>
+<p class="desc">Общение с гостями</p>
+</div>
+</div>
+
+<div class="event">
+<div class="time">15:00</div>
+<div>
+<h3>Фотосессия</h3>
+<p class="desc">Время для фото</p>
+</div>
+</div>
+
+<div class="event">
+<div class="time">17:00</div>
+<div>
+<h3>Банкет</h3>
+<p class="desc">Основное торжество</p>
+</div>
+</div>
+
+</div>
+</div> -->
+
+<!-- TIMER -->
+<div class="section timer-section reveal">
+<div class="card timer-card">
+
+<div class="title timer-title">До нашей свадьбы осталось</div>
+
+<div id="timer">
+
+<div class="flip"><span id="days">0</span><p>дней</p></div>
+<div class="flip"><span id="hours">0</span><p>часов</p></div>
+<div class="flip"><span id="minutes">0</span><p>минут</p></div>
+<div class="flip"><span id="seconds">0</span><p>секунд</p></div>
+
+</div>
+
+</div>
+</div>
+
+<!-- RSVP -->
+<div class="section reveal">
+<div class="card">
+
+<div class="title">Подтверждение</div>
+
+<div class="group" id="rsvp">
+<button>Смогу прийти</button>
+<button>Не смогу</button>
+</div>
+
+<div class="title">Алкоголь</div>
+
+<div class="group" id="drink">
+<button>Вино</button>
+<button>Шампанское</button>
+<button>Виски</button>
+<button>Без алкоголя</button>
+</div>
+
+<button onclick="submit()">Отправить</button>
+
+</div>
+</div>
+
+<footer class="lux-footer">
+
+<div class="footer-content">
+
+<div class="footer-names">
+Владислав & Светлана
+</div>
+
+<div class="footer-text">
+С нетерпением Ждем вас 💍 в этот особенный день
+</div>
+
+<div class="footer-heart">♥</div>
+
+</div>
+
+</footer>
+
+<script>
+
+
+
+// ======================
+// INIT (ждём DOM)
+// ======================
+document.addEventListener("DOMContentLoaded", function(){
+
+// ===== BUBBLES =====
+const c = document.getElementById('bubbles');
+const ctx = c.getContext('2d');
+
+function resize(){
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+let bubbles = [];
+for(let i=0;i<40;i++){
+  bubbles.push({
+    x: Math.random()*c.width,
+    y: Math.random()*c.height,
+    r: Math.random()*3
+  });
+}
+
+function bubbleLoop(){
+  ctx.clearRect(0,0,c.width,c.height);
+  bubbles.forEach(b=>{
+    ctx.beginPath();
+    ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+    ctx.fillStyle="rgba(255,255,255,0.5)";
+    ctx.fill();
+
+    b.y -= 0.3;
+    if(b.y < 0) b.y = c.height;
+  });
+  requestAnimationFrame(bubbleLoop);
+}
+bubbleLoop();
+
+
+// ===== RSVP BUTTONS =====
+let rsvp = null;
+let drink = null;
+let sent = false;
+
+document.querySelectorAll('#rsvp button').forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll('#rsvp button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    rsvp = btn.innerText;
+  });
+});
+
+document.querySelectorAll('#drink button').forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll('#drink button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    drink = btn.innerText;
+  });
+});
+
+
+// ===== SUBMIT =====
+window.submit = function(){
+
+  if(sent) return;
+
+  if(!rsvp || !drink){
+    alert("Пожалуйста, заполните все поля");
+    return;
+  }
+
+  // конфетти
+  for(let i=0;i<80;i++){
+    let el=document.createElement('div');
+    el.style.position='fixed';
+    el.style.width='6px';
+    el.style.height='6px';
+    el.style.background='gold';
+    el.style.top=Math.random()*100+'%';
+    el.style.left=Math.random()*100+'%';
+    el.style.animation='fall 2s linear';
+    document.body.appendChild(el);
+
+    setTimeout(()=>el.remove(),2000);
+  }
+
+  alert("Спасибо! ❤️");
+  sent = true;
+};
+
+
+// ===== CONFETTI ANIMATION =====
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(300px);opacity:0;}
+}`;
+document.head.appendChild(style);
+
+
+// ===== TIMER =====
+const weddingDate = new Date("2026-07-07T14:30:00").getTime();
+
+function animateFlip(id, value){
+  const el = document.getElementById(id);
+  if(!el) return;
+
+  if(el.innerText != value){
+    el.style.transform = "rotateX(90deg)";
+    
+    setTimeout(()=>{
+      el.innerText = value;
+      el.style.transform = "rotateX(0deg)";
+    },150);
+  }
+}
+
+function updateTimer(){
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+
+  if(diff <= 0) return;
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff / (1000*60*60)) % 24);
+  const m = Math.floor((diff / (1000*60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  animateFlip("days", d);
+  animateFlip("hours", h);
+  animateFlip("minutes", m);
+  animateFlip("seconds", s);
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+
+// ===== SCROLL ANIMATION =====
+const elements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+elements.forEach(el => observer.observe(el));
+
+});
+
+</script>
+
+</body>
+</html>
