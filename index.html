@@ -1009,6 +1009,56 @@ button{
   text-align: center;
 }
 
+.input{
+  max-width: 350px;
+  width: 100%;
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  color: #fff;
+  background-color: #c0dbed;
+  font-size: 14px;
+}
+
+.success{
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+.success.show{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.success-content{
+  text-align: center;
+  transform: translateY(20px);
+  transition: 0.5s;
+}
+
+.success.show .success-content{
+  transform: translateY(0);
+}
+
+.success-title{
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.success-text{
+  font-size: 16px;
+  opacity: 0.7;
+}
+
 @keyframes fall{
   0%{
     transform:translateY(0);
@@ -1107,7 +1157,7 @@ button{
   <div class="priglos-content">
 
     <div class="priglos-text">
-            Один день в этом году будет для нас особенно важным и поэтому мы
+            Один день в этом году будет для нас особенно важным, и поэтому мы
       приглашаем вас отметить с нами этот праздник!
     </div>
 
@@ -1118,7 +1168,7 @@ button{
 <!-- DRESS -->
 <div class="section dress reveal">
 <div class="dress-card">
-<h2 class="dress-title">Dress Code — Cocktail</h2>
+<h2 class="dress-title">Dress Code: Cocktail</h2>
 <!-- <p class="dress-text">Просим придерживаться палитры</p> -->
 
 <div class="dress-wrap">
@@ -1146,7 +1196,7 @@ button{
   <div class="address-wrap">
 
     <div class="address-text">
-      Место встречи <br> Санкт- Петербург <br>
+      Место встречи <br> Санкт-Петербург <br>
       Дворец бракосочетания №1 
       <div>Английская набережная, 28</div>
     </div>
@@ -1166,7 +1216,7 @@ button{
 
     <div class="ceremony-wrap">
       <div class="ceremony-text">
-        Церемония бракосочетания <br>состоится 07 июля 2026 года
+        Церемония бракосочетания <br>состоится 7 июля 2026 года
       <br>
         <div class="ceremony-time">в 14:30</div>
       </div>
@@ -1189,8 +1239,8 @@ button{
 
 <div class="meduza reveal">
   <div class="meduza-text">
-    Будем благодарны, если Вы 
-    воздержитесь от криков «Горько» 
+    Будем благодарны, если вы 
+    воздержитесь от криков «Горько!» 
     на празднике, ведь поцелуй — 
     знак выражения чувств, он не может быть по заказу.
 
@@ -1218,6 +1268,12 @@ button{
 <button>Без алкоголя</button>
 </div>
 
+<input 
+  id="name"
+  type="text"
+  placeholder="Ваше имя"
+  class="input"
+/>
 <button id="submitBtn" class="map-btn" onclick="submit()">Отправить</button>
 
 </div>
@@ -1241,17 +1297,9 @@ button{
 </div>
 </div>
 
-<!-- <div class="line-heart reveal">
-  <div class="line-heart-wrap">
-    <img src="./line-heart.png" alt="Сердечко">
-  </div>
-</div> -->
-
 <!-- LOCATION -->
 <div class="section reveal map-wrap">
   <div class="card map-content">
-    <!-- <div class="title map-title">Место</div>
-    <p class="map-text">Английская набережная, Санкт-Петербург</p> -->
     
     <div class="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1998.895130515034!2d30.2921437!3d59.9338823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696311effa34f9f%3A0xa871a0d27dc961b4!2z0JTQstC-0YDQtdGGINCx0YDQsNC60L7RgdC-0YfQtdGC0LDQvdC40Y8g4oSWMQ!5e0!3m2!1sru!2sru!4v1775507825868!5m2!1sru!2sru"></iframe>
@@ -1266,37 +1314,6 @@ button{
 
   </div>
 </div>
-
-<!-- TIMELINE -->
-<!-- <div class="section reveal">
-<div class="timeline">
-
-<div class="event">
-<div class="time">14:00</div>
-<div>
-<h3>Фуршет</h3>
-<p class="desc">Общение с гостями</p>
-</div>
-</div>
-
-<div class="event">
-<div class="time">15:00</div>
-<div>
-<h3>Фотосессия</h3>
-<p class="desc">Время для фото</p>
-</div>
-</div>
-
-<div class="event">
-<div class="time">17:00</div>
-<div>
-<h3>Банкет</h3>
-<p class="desc">Основное торжество</p>
-</div>
-</div>
-
-</div>
-</div> -->
 
 <footer class="lux-footer">
 
@@ -1316,12 +1333,34 @@ button{
 
 </footer>
 
+<div id="success" class="success">
+  <div class="success-content">
+    <div class="success-title">Спасибо 🥳🐋</div>
+    <div class="success-text">Мы с нетерпением ждем вас!</div>
+  </div>
+</div>
+
+<div id="no-success" class="success">
+  <div class="success-content">
+    <div class="success-title">Ну почему же нет?🐋</div>
+    <div class="success-text">До новых встреч!</div>
+  </div>
+</div>
+
 <script>
 
 // ======================
 // INIT (ждём DOM)
 // ======================
 document.addEventListener("DOMContentLoaded", function(){
+
+// if(localStorage.getItem("wedding_sent")){
+//   const btn = document.getElementById("submitBtn");
+//   if(btn){
+//     btn.innerText = "Вы уже ответили 💍";
+//     btn.disabled = true;
+//   }
+// }  
 
 let rsvp = null;
 let drinks = [];
@@ -1366,21 +1405,21 @@ bubbleLoop();
 
 window.submit = function(){
 
-// const formData = new FormData();
-// formData.append("rsvp", rsvp);
-// formData.append("drinks", drinks.join(", "));
+  // if (sent) return;
 
-// await fetch("https://script.google.com/macros/s/AKfycbytRy-AFDbh77WNxxIZXd8EDTptbf_Ik2d8Pxmteb2t4hVuONxyB6IMWGN96lx9aspP/exec", {
-//   method: "POST",
-//   body: formData
-// });
+  // if (sent || localStorage.getItem("wedding_sent")) return;
 
-  if (sent) return;
+  const name = document.getElementById("name")?.value.trim();
+
+  if (!name) {
+    alert("Введите имя, пожалуйста");
+    return;
+  }
 
   if (!rsvp) {
-  alert("Пожалуйста, выберите вариант");
-  return;
-}
+    alert("Пожалуйста, выберите вариант");
+    return;
+  }
 
 // алкоголь обязателен ТОЛЬКО если придёт
 if (rsvp === "Смогу прийти" && drinks.length === 0) {
@@ -1389,11 +1428,19 @@ if (rsvp === "Смогу прийти" && drinks.length === 0) {
 }
 
   if (rsvp === "Не смогу") {
+
+    const btn = document.getElementById("submitBtn");
+    btn.innerText = "Отправлено 😩🥲💔🫠😭";
+    btn.disabled = true;
+
     sadEffect();
-    alert("😩🥲💔🫠😭");
+
+    // alert("😩🥲💔🫠😭");
+    showSuccessNo();
 
     // 👉 отправляем в фоне (БЕЗ ожидания)
-    sendData();
+    sendData(name);
+    // localStorage.setItem("wedding_sent", "true");
 
     sent = true;
     return;
@@ -1406,7 +1453,7 @@ if (rsvp === "Смогу прийти" && drinks.length === 0) {
     return;
   }
 
-  btn.innerText = "Отправка...";
+  btn.innerText = "Отправлено 🥳🐋";
   btn.disabled = true;
 
   try {
@@ -1440,10 +1487,13 @@ if (rsvp === "Смогу прийти" && drinks.length === 0) {
       setTimeout(()=>el.remove(),2000);
     }
 
-    alert("🥳🐋💍🩵🥹");
+    // alert("🥳🐋💍🩵🥹");
+    showSuccess();
 
     // 👉 отправка В ФОНЕ (главный фикс)
-    sendData();
+    sendData(name);
+
+    // localStorage.setItem("wedding_sent", "true");
 
     sent = true;
 
@@ -1451,15 +1501,18 @@ if (rsvp === "Смогу прийти" && drinks.length === 0) {
     console.error(e);
     alert("Ошибка отправки");
 
-    btn.innerText = "Отправить";
-    btn.disabled = false;
+    btn.innerText = "Отправлено 😩🥲💔🫠😭";
+    btn.disabled = true;
   }
 
 };
 
-function sendData(){
+
+
+function sendData(name){
 
   const formData = new FormData();
+  formData.append("name", name);
   formData.append("rsvp", rsvp);
   formData.append("drinks", drinks.join(", "));
 
@@ -1467,6 +1520,35 @@ function sendData(){
     method: "POST",
     body: formData
   }).catch(err => console.error("Ошибка отправки:", err));
+}
+
+
+function showSuccess(){
+
+  const el = document.getElementById("success");
+  if(!el) return;
+
+  el.classList.add("show");
+
+  // через 2 секунды скрываем
+  setTimeout(()=>{
+    el.classList.remove("show");
+  }, 2000);
+
+}
+
+function showSuccessNo(){
+
+  const el = document.getElementById("no-success");
+  if(!el) return;
+
+  el.classList.add("show");
+
+  // через 2 секунды скрываем
+  setTimeout(()=>{
+    el.classList.remove("show");
+  }, 2500);
+
 }
 
 function sadEffect(){
