@@ -37,7 +37,7 @@ html,body{
    width: 36px;
    height: 34px;
    position: absolute;
-   top: 17%;
+   top: 14%;
 }
 
 .heart h1{
@@ -221,7 +221,7 @@ canvas{
   color: #fff;
   font-weight: 400;
   font-size:32px;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 6%;
   margin-bottom: 40px;
@@ -254,6 +254,7 @@ canvas{
 
 .convert{
   padding-top: 30px;
+  padding-bottom: 60px;
 }
 
 .convert-text{
@@ -261,17 +262,17 @@ canvas{
   color: #fff;
   font-weight: 400;
   font-size:25px;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .convert-img{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 18%;
+  width: 12%;
 }
 
 .convert-img img{
@@ -311,7 +312,7 @@ canvas{
   color: #fff;
   font-weight: 400;
   font-size:27px;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
   text-align: center;
@@ -376,7 +377,7 @@ canvas{
   color: #fff;
   font-weight: 400;
   font-size:30px;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
   line-height: 1.35;
@@ -389,6 +390,14 @@ canvas{
   font-size: 22px;
 }
 
+.saint-wrap{
+  padding-top: 40px;
+}
+
+.saint-wrap img{
+  width: 100%;
+}
+
 .castle{
   padding: 40px 40px 90px 40px;
 }
@@ -399,8 +408,8 @@ canvas{
 
 .meduza{
   position: relative;
-  margin-top: 70px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .meduza::before{
@@ -421,11 +430,15 @@ canvas{
   font-weight: 400;
   font-size:25px;
   line-height: 1.35;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
   text-align: center;
   padding: 0 10px;
+}
+
+.alco-title{
+  margin-top: 20px;
 }
 
 .line-heart{
@@ -453,7 +466,7 @@ canvas{
   font-weight: 400;
   font-size:25px;
   line-height: 1.35;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
 }
@@ -467,7 +480,7 @@ canvas{
   font-weight: 400;
   font-size:25px;
   line-height: 1.35;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
 }
@@ -477,7 +490,7 @@ canvas{
   font-weight: 400;
   font-size:25px;
   line-height: 1.35;
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   letter-spacing: 9%;
 }
@@ -515,10 +528,27 @@ canvas{
   margin-top:10px;
   padding:10px 20px;
   border-radius:30px;
-  background:#6c8ca3;
-  color:white;
+  background: #CFE6F5;
+  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25); */
+  color:#fff;
   text-decoration:none;
   font-size: 20px;
+}
+
+.opros-wrap{
+  position: relative;
+}
+.opros-wrap::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(./opros-shell.png) center / cover no-repeat;
+    z-index: 1;
+    width: 74px;
+    height: 50px;
+    top: 30px;
+    left: 38px;
+    transform: rotate(4deg);
 }
 
 /* buttons */
@@ -553,6 +583,7 @@ canvas{
   border-radius:999px;
   border:none;
   background:#eef1f7;
+  color: #7ea1b8;
   cursor:pointer;
 
   transition:all 0.25s ease;
@@ -570,8 +601,10 @@ canvas{
   transform:scale(0.96);
 }
 
+
+
 .group button.active{
-  background:#6c8ca3;
+  background:#CFE6F5;
   color:white;
   box-shadow:0 6px 20px rgba(108,140,163,0.4);
 }
@@ -613,7 +646,8 @@ footer{
 }
 
 #timer div{
-  background: linear-gradient(180deg, #eef5fb, #e3edf7);
+  /* background: linear-gradient(180deg, #eef5fb, #e3edf7); */
+  background: linear-gradient(180deg, #b4ddffb3, #ffffff);
   padding:20px;
   border-radius:15px;
   min-width:80px;
@@ -628,9 +662,14 @@ footer{
 
 #timer p{
   font-size:12px;
-  color:#777;
+  color:#7ea1b8;
   margin-top:5px;
 }
+
+/* .flip span{
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+} */
 
 /* ===== BACKGROUNDS ===== */
 
@@ -734,13 +773,9 @@ button{
 
 .priglos-content{
   position:relative;
-  width:100%;
-  max-width:500px; /* ключевой момент */
-  /* aspect-ratio: 16/9; держит форму мазка */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+  padding: 1px 0;
+
+
 }
 
 /* мазок */
@@ -753,16 +788,52 @@ button{
 }
 
 /* текст */
-.priglos-content p{
-  width:70%; /* ограничиваем внутри мазка */
+.priglos-text{
+   /* ограничиваем внутри мазка */
   /* font-family:'Playfair Display'; */
-  -webkit-text-stroke: 0.1px #fff;
+  /* -webkit-text-stroke: 0.1px #fff; */
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  font-size:21px;
+  font-size:22px;
   letter-spacing: 9%;
   line-height:1.6;
   font-weight: 500;
   color:white;
+  text-align: center;
+  margin-top: 31px;
+  margin-bottom: 36px;
+}
+
+.lux-footer{
+  padding: 20px 0 50px 0;
+  /* border: 1px dashed #7ea1b8; */
+  font-size: 20px;
+  font-family: 'Advent Pro', sans-serif;
+  /* background: linear-gradient(180deg, #eef5fb, #e3edf7); */
+}
+.footer-content{
+    color:white;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer-heart{
+    background-image: url(small-heart.png);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 36px;
+    height: 34px;
+    display: inline-flex;
+}
+
+.footer-text{
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-size:26px;
+  letter-spacing: 9%;
+  line-height:1.4;
+  font-weight: 500;
+  color:white;
+  text-align: center;
 }
 
 @keyframes fall{
@@ -828,43 +899,17 @@ button{
 
 <!-- PRIGLOS -->
 <div class="section priglos-section reveal">
+
   <div class="priglos-content">
-    <p>
-      Один день в этом году будет для нас особенно важным и поэтому мы
+
+    <div class="priglos-text">
+            Один день в этом году будет для нас особенно важным и поэтому мы
       приглашаем вас отметить с нами этот праздник!
-    </p>
+    </div>
+
   </div>
+  
 </div>
-
-
-<!-- ABOUT -->
-<!-- <div class="section reveal">
-<div class="card">
-<p>
-Там, где живет любовь — рождается радость
-</p>
-
-<div class="people">
-<div class="person">
-<img src="https://randomuser.me/api/portraits/men/32.jpg">
-<div class="name">Жених</div>
-</div>
-<div class="person">
-<img src="https://randomuser.me/api/portraits/women/44.jpg">
-<div class="name">Невеста</div>
-</div>
-</div>
-
-</div>
-</div> -->
-
-<!-- INVITE -->
-<!-- <div class="section invite-bg reveal">
-<div class="card">
-<div class="title">Приглашение</div>
-<p>Мы будем счастливы разделить с вами этот день</p>
-</div>
-</div> -->
 
 <!-- DRESS -->
 <div class="section dress reveal">
@@ -893,6 +938,22 @@ button{
   </div>
 </div>
 
+<div class="address-content reveal">
+  <div class="address-wrap">
+
+    <div class="address-text">
+      Место встречи <br> Санкт- Петербург <br>
+      Дворец бракосочетания №1 
+      <div>Английская набережная, 28</div>
+    </div>
+
+  </div>
+</div>
+
+    <div class="saint-wrap">
+      <img src="./saint-petersburg.png" alt="Saint-Petersburg">
+    </div>
+
 </div>
 </div>
 
@@ -916,23 +977,11 @@ button{
   </div>
 </div>
 
-<div class="address-content reveal">
-  <div class="address-wrap">
-
-    <div class="address-text">
-      Место встречи <br> Санкт- Петербург <br>
-      Дворец бракосочетания №1 
-      <div>Английская набережная, 28</div>
-    </div>
-
-  </div>
-</div>
-
-<div class="castle reveal">
+<!-- <div class="castle reveal">
   <div class="castle-img">
     <img src="./building.jpg" alt="Дворец Бракосочетаний №1">
   </div>
-</div>
+</div> -->
 
 <div class="meduza reveal">
   <div class="meduza-text">
@@ -944,12 +993,55 @@ button{
   </div>
 </div>
 
-<div class="line-heart reveal">
+<!-- RSVP -->
+<div class="section reveal opros-wrap">
+<div class="card opros-card">
+
+<div class="title">Подтверждение</div>
+
+<div class="group" id="rsvp">
+<button>Смогу прийти</button>
+<button>Не смогу</button>
+</div>
+
+<div class="title alco-title">Алкоголь</div>
+
+<div class="group" id="drink">
+<button>Вино белое</button>
+<button>Вино красное</button>
+<button>Шампанское</button>
+<button>Виски</button>
+<button>Без алкоголя</button>
+</div>
+
+<button id="submitBtn" class="map-btn" onclick="submit()">Отправить</button>
+
+</div>
+</div>
+
+<!-- TIMER -->
+<div class="section timer-section reveal">
+<div class="card timer-card">
+
+<div class="title timer-title">До нашей свадьбы осталось</div>
+
+<div id="timer">
+
+<div class="flip"><span id="days">0</span><p>дней</p></div>
+<div class="flip"><span id="hours">0</span><p>часов</p></div>
+<div class="flip"><span id="minutes">0</span><p>минут</p></div>
+<div class="flip"><span id="seconds">0</span><p>секунд</p></div>
+
+</div>
+
+</div>
+</div>
+
+<!-- <div class="line-heart reveal">
   <div class="line-heart-wrap">
     <img src="./line-heart.png" alt="Сердечко">
   </div>
-  
-</div>
+</div> -->
 
 <!-- LOCATION -->
 <div class="section reveal map-wrap">
@@ -1002,63 +1094,19 @@ button{
 </div>
 </div> -->
 
-<!-- TIMER -->
-<div class="section timer-section reveal">
-<div class="card timer-card">
-
-<div class="title timer-title">До нашей свадьбы осталось</div>
-
-<div id="timer">
-
-<div class="flip"><span id="days">0</span><p>дней</p></div>
-<div class="flip"><span id="hours">0</span><p>часов</p></div>
-<div class="flip"><span id="minutes">0</span><p>минут</p></div>
-<div class="flip"><span id="seconds">0</span><p>секунд</p></div>
-
-</div>
-
-</div>
-</div>
-
-<!-- RSVP -->
-<div class="section reveal">
-<div class="card">
-
-<div class="title">Подтверждение</div>
-
-<div class="group" id="rsvp">
-<button>Смогу прийти</button>
-<button>Не смогу</button>
-</div>
-
-<div class="title">Алкоголь</div>
-
-<div class="group" id="drink">
-<button>Вино белое</button>
-<button>Вино красное</button>
-<button>Шампанское</button>
-<button>Виски</button>
-<button>Без алкоголя</button>
-</div>
-
-<button id="submitBtn" class="map-btn" onclick="submit()">Отправить</button>
-
-</div>
-</div>
-
 <footer class="lux-footer">
 
 <div class="footer-content">
 
 <div class="footer-names">
-Владислав & Светлана
+
 </div>
 
 <div class="footer-text">
-С нетерпением Ждем вас 💍 в этот особенный день
+С нетерпением ждем вас в этот<br> радостный день! <div class="footer-heart"></div>
 </div>
 
-<div class="footer-heart">♥</div>
+
 
 </div>
 
@@ -1128,7 +1176,7 @@ if (rsvp === "Смогу прийти" && drinks.length === 0) {
 }
 
   if (rsvp === "Не смогу") {
-    alert("Очень жаль, будем скучать 💔");
+    alert("😩🥲💔🫠😭");
     sent = true;
     return;
   }
@@ -1174,7 +1222,7 @@ if (rsvp === "Смогу прийти" && drinks.length === 0) {
       setTimeout(()=>el.remove(),2000);
     }
 
-    alert("Спасибо! ❤️");
+    alert("🥳🐋💍🩵🥹");
 
     sent = true;
 
